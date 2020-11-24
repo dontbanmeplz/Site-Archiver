@@ -1,4 +1,4 @@
-﻿"""Simple Python 3 web crawler, to be extended for various uses.
+"""Simple Python 3 web crawler, to be extended for various uses.
 """
 import collections
 import string
@@ -168,7 +168,7 @@ def getwords(rawtext):
 
 
 def pagehandler(pageurl, pageresponse, soup):
-    archived_url = waybackpy.save(pageurl, UA = "Any-User-Agent")
+    archived_url = waybackpy.Url(pageurl, "Any-User-Agent").save()
     print(pageurl + ' Crawled')
     print("Crawling:" + pageurl + " ({0} bytes)".format(len(pageresponse.text)))
     # wordcount(soup) # display unique word counts
